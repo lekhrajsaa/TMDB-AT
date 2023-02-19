@@ -14,6 +14,7 @@ import MainTitleBar from '../components/MainTitleBar';
 import VerticalCardItem from '../components/VerticalCardItem';
 import Heading from '../components/Heading';
 import SearchButton from '../components/SearchBtn';
+import BottomNavigation from '../components/BottomNavigation';
 
 export default function SearchScreen() {
   const [search, setSearch] = useState('Populer');
@@ -35,15 +36,14 @@ export default function SearchScreen() {
 
   useEffect(() => {
     getMovies();
-    setSearch()
+    setSearch();
   }, []);
-
 
   const handlePress = () => {
     getMovies();
     setSearch();
-    Keyboard.dismiss()
-  }
+    Keyboard.dismiss();
+  };
 
   // console.log(search)
   // console.log(data.results);
@@ -67,7 +67,7 @@ export default function SearchScreen() {
             value={search}
           />
         </View>
-        <SearchButton onPress={handlePress}/>
+        <SearchButton onPress={handlePress} />
       </View>
 
       <View style={styles.searchresult}>
@@ -94,8 +94,12 @@ export default function SearchScreen() {
           )}
         />
       ) : (
-          <ActivityIndicator />
+        <ActivityIndicator />
       )}
+
+      <View style={styles.bottomContainer}>
+        <BottomNavigation />
+      </View>
     </View>
   );
 }
@@ -108,7 +112,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 8,
     justifyContent: 'space-between',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   inputContainer: {
     borderWidth: 1,
@@ -121,11 +125,11 @@ const styles = StyleSheet.create({
   },
   searchresult: {
     marginTop: 25,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   verticalflatlistStyle: {
     marginTop: 24,
-    height: 600,
-    paddingHorizontal: 20
+    height: 520,
+    paddingHorizontal: 20,
   },
 });

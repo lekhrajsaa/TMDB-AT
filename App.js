@@ -6,9 +6,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
 import DescriptionScreen from './src/screens/DescriptionScreen';
 import SearchScreen from './src/screens/SearchScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MenuIcon from './src/components/MenuIcon';
 
 export default function App() {
   const Stack = createStackNavigator();
+  const Tab = createBottomTabNavigator();
 
   return (
     <NavigationContainer>
@@ -33,9 +36,13 @@ export default function App() {
             headerTransparent: true,
             headerTintColor: 'white',
             title: '',
+            headerRight: () =>(<MenuIcon/>)
           }}
         />
-        <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen 
+        name="Search" 
+        component={SearchScreen}
+        options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

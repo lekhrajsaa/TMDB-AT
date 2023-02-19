@@ -7,6 +7,7 @@ import MainTitleBar from '../components/MainTitleBar';
 import BottomNavigation from '../components/BottomNavigation';
 import {ActivityIndicator} from 'react-native';
 import {StatusBar} from 'react-native';
+import MenuIcon from '../components/MenuIcon';
 
 export default function HomeScreen() {
   const [data, setData] = useState(null);
