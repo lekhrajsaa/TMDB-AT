@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 20,
+    marginTop: 15
   },
   text: {
     fontFamily: 'Merriweather-Black',

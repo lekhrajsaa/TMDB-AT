@@ -2,6 +2,7 @@ import { TouchableOpacity, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 export default function ShowmoreButton({onPress}) {
+
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.buttonText}>See more</Text>

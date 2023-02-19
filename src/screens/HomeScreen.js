@@ -37,6 +37,15 @@ export default function HomeScreen() {
         backgroundColor={'transparent'}
         barStyle={'dark-content'}
       />
+
+      <View
+        style={{
+          height: '100%',
+          backgroundColor: '#F5F5F5',
+          width: '35%',
+          position: 'absolute',
+        }}
+      />
       <MainTitleBar />
       <View style={styles.firstHeading}>
         <Heading title={'Now Showing'} />
@@ -90,6 +99,9 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    backgroundColor: '#ffffff',
+  },
   firstHeading: {
     marginTop: 16,
     marginBottom: 17,

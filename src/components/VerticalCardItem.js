@@ -11,6 +11,7 @@ import MovieName from './MovieName';
 import MovieRating from './MovieRating';
 import Duration from './Duration';
 import Genre from './Genre';
+import { useNavigation } from '@react-navigation/native';
 
 export default function VerticalCardItem({title, imgurl, rating, genre}) {
 
@@ -40,18 +41,20 @@ export default function VerticalCardItem({title, imgurl, rating, genre}) {
 
   const url = 'https://image.tmdb.org/t/p/w500/';
 
-  // const value = genre_identities.find( item => item.id == 28);
-  // console.log(value.name);
+  const navigation = useNavigation();
+  const handlePress = () => {
+    navigation.navigate("Description")
+  }
 
   return (
     <View style={styles.mainContainer}>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handlePress}>
           <Image source={{uri: `${url}${imgurl}`}} style={styles.img} />
         </TouchableOpacity>
       </View>
       <View style={styles.movieDescription}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handlePress}>
           <MovieName title={title} />
         </TouchableOpacity>
         <MovieRating rating={rating} />
