@@ -6,6 +6,7 @@ import Heading from '../components/Heading';
 import MainTitleBar from '../components/MainTitleBar';
 import BottomNavigation from '../components/BottomNavigation';
 import {ActivityIndicator} from 'react-native';
+import {StatusBar} from 'react-native';
 
 export default function HomeScreen() {
   const [data, setData] = useState(null);
@@ -31,6 +32,11 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.mainContainer}>
+      <StatusBar
+        translucent
+        backgroundColor={'transparent'}
+        barStyle={'dark-content'}
+      />
       <MainTitleBar />
       <View style={styles.firstHeading}>
         <Heading title={'Now Showing'} />

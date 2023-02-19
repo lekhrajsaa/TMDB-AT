@@ -1,8 +1,8 @@
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import HomeScreen from './src/screens/HomeScreen';
-import HorizontalCardItem from './src/components/HorizontalCardItem';
-import {StatusBar} from 'react-native';
+import DescriptionScreen from './src/screens/DescriptionScreen';
+
 
 export default function App() {
   return (
@@ -15,13 +15,10 @@ export default function App() {
           position: 'absolute',
         }}
       />
-      <StatusBar
-        translucent
-        backgroundColor={'transparent'}
-        barStyle={'dark-content'}
-      />
+      
       <View style={styles.container}>
-        <HomeScreen />
+        {/* <HomeScreen /> */}
+        <DescriptionScreen />
       </View>
     </View>
   );
