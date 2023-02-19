@@ -2,6 +2,7 @@ import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import HomeScreen from './src/screens/HomeScreen';
 import DescriptionScreen from './src/screens/DescriptionScreen';
+import SearchScreen from './src/screens/SearchScreen';
 
 
 export default function App() {
@@ -17,8 +18,9 @@ export default function App() {
       />
       
       <View style={styles.container}>
-        {/* <HomeScreen /> */}
-        <DescriptionScreen />
+        <HomeScreen />
+        {/* <DescriptionScreen /> */}
+        {/* <SearchScreen /> */}
       </View>
     </View>
   );
